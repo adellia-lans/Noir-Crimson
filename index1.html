@@ -1,0 +1,611 @@
+Here is a luxurious brand website for "Noir & Crimson Atelier" — a high-end bag designer featuring burgundy, black, white, and gold accents.
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Noir & Crimson | Artisan Luxury Bags</title>
+  <!-- Google Fonts: refined serif + clean sans -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #0a0a0a;
+      font-family: 'Montserrat', sans-serif;
+      color: #ece5dc;
+      line-height: 1.5;
+      scroll-behavior: smooth;
+    }
+
+    /* Palette: Burgundy, Black, White, Gold */
+    :root {
+      --burgundy: #6e1a2f;
+      --deep-burgundy: #4d1022;
+      --black: #0a0a0a;
+      --charcoal: #161616;
+      --white: #faf7f2;
+      --off-white: #f0ebe2;
+      --gold: #c6a15b;
+      --gold-light: #dbb87c;
+      --gold-dark: #9e7a48;
+    }
+
+    h1, h2, h3, .logo, .serif {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 48px;
+    }
+
+    /* Header */
+    header {
+      background: rgba(10, 10, 10, 0.92);
+      backdrop-filter: blur(10px);
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      padding: 20px 0;
+      border-bottom: 1px solid rgba(198, 161, 91, 0.3);
+      transition: 0.3s;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo-icon {
+      font-size: 2rem;
+      color: var(--gold);
+    }
+
+    .logo-text {
+      font-size: 1.8rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: var(--white);
+    }
+    .logo-text span {
+      color: var(--gold);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 48px;
+      list-style: none;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: var(--off-white);
+      font-size: 0.85rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      transition: 0.3s;
+    }
+    .nav-links a:hover, .nav-links a.active {
+      color: var(--gold);
+    }
+
+    /* Hero Section */
+    .hero {
+      min-height: 100vh;
+      background: linear-gradient(115deg, rgba(10,10,10,0.8) 0%, rgba(77,16,34,0.6) 100%), url('https://images.pexels.com/photos/1152077/pexels-photo-1152077.jpeg?auto=compress&cs=tinysrgb&w=1600');
+      background-size: cover;
+      background-position: center 20%;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      margin-top: 0;
+      padding-top: 100px;
+    }
+
+    .hero-content {
+      max-width: 850px;
+      margin: 0 auto;
+    }
+
+    .hero-sub {
+      font-size: 0.85rem;
+      letter-spacing: 5px;
+      color: var(--gold);
+      margin-bottom: 20px;
+      text-transform: uppercase;
+    }
+
+    .hero-title {
+      font-size: 5rem;
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+    .hero-title span {
+      color: var(--gold);
+      font-style: italic;
+    }
+    .hero-desc {
+      font-size: 1.1rem;
+      margin-bottom: 40px;
+      max-width: 550px;
+      margin-left: auto;
+      margin-right: auto;
+      color: #e2d9cf;
+    }
+
+    .btn-gold {
+      background: transparent;
+      border: 1.5px solid var(--gold);
+      color: var(--gold);
+      padding: 14px 42px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      cursor: pointer;
+      transition: all 0.4s;
+      font-family: 'Montserrat', sans-serif;
+    }
+    .btn-gold:hover {
+      background: var(--gold);
+      color: var(--black);
+      border-color: var(--gold);
+    }
+
+    /* Sections */
+    section {
+      padding: 110px 0;
+      border-bottom: 1px solid rgba(198, 161, 91, 0.2);
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2.8rem;
+      margin-bottom: 20px;
+    }
+    .section-title:after {
+      content: '';
+      display: block;
+      width: 70px;
+      height: 2px;
+      background: var(--gold);
+      margin: 18px auto 0;
+    }
+    .section-subhead {
+      text-align: center;
+      color: var(--gold-light);
+      margin-bottom: 60px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+    }
+
+    /* Collection Grid */
+    .bag-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 50px;
+    }
+
+    .bag-card {
+      background: var(--charcoal);
+      border-radius: 2px;
+      overflow: hidden;
+      transition: transform 0.4s ease, box-shadow 0.4s;
+      border-bottom: 2px solid transparent;
+      box-shadow: 0 15px 25px -12px rgba(0,0,0,0.4);
+    }
+    .bag-card:hover {
+      transform: translateY(-10px);
+      border-bottom: 2px solid var(--gold);
+    }
+    .bag-img {
+      height: 400px;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+    .bag-tag {
+      position: absolute;
+      bottom: 18px;
+      left: 18px;
+      background: var(--burgundy);
+      color: var(--gold);
+      padding: 5px 14px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+    .bag-info {
+      padding: 28px 24px 32px;
+      text-align: center;
+    }
+    .bag-info h3 {
+      font-size: 1.7rem;
+      margin-bottom: 8px;
+      color: var(--white);
+    }
+    .bag-price {
+      color: var(--gold);
+      font-size: 1.2rem;
+      font-weight: 500;
+      margin: 12px 0;
+    }
+    .bag-desc {
+      font-size: 0.85rem;
+      color: #bcb2a4;
+      margin-bottom: 22px;
+    }
+
+    /* About Section */
+    .about-lux {
+      background: linear-gradient(135deg, #110c0a 0%, #1f1117 100%);
+    }
+    .about-inner {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 60px;
+      align-items: center;
+    }
+    .about-text {
+      flex: 1;
+    }
+    .about-text h3 {
+      font-size: 2.5rem;
+      color: var(--gold);
+      margin-bottom: 20px;
+    }
+    .about-text p {
+      margin-bottom: 25px;
+      color: #cfc5b8;
+      font-size: 1rem;
+    }
+    .about-img {
+      flex: 1;
+      height: 480px;
+      background: url('https://images.pexels.com/photos/2111048/pexels-photo-2111048.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2') center/cover no-repeat;
+      box-shadow: -12px 12px 0 var(--burgundy);
+    }
+
+    /* Craftsmanship Icons */
+    .craft-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 35px;
+      margin-top: 30px;
+    }
+    .craft-item {
+      text-align: center;
+      padding: 20px;
+    }
+    .craft-item i {
+      font-size: 2.8rem;
+      color: var(--gold);
+      margin-bottom: 18px;
+    }
+
+    /* Testimonial */
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 35px;
+    }
+    .testi-card {
+      background: #12100e;
+      padding: 34px 28px;
+      border-left: 3px solid var(--gold);
+    }
+    .testi-card i {
+      color: var(--gold);
+      font-size: 2rem;
+      margin-bottom: 20px;
+      display: block;
+    }
+
+    /* CTA */
+    .cta-section {
+      background: var(--burgundy);
+      text-align: center;
+      padding: 85px 20px;
+    }
+    .cta-section h2 {
+      font-size: 2.4rem;
+      margin-bottom: 20px;
+    }
+    .btn-outline-light {
+      background: transparent;
+      border: 1px solid var(--white);
+      color: var(--white);
+      padding: 12px 38px;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+    .btn-outline-light:hover {
+      background: var(--white);
+      color: var(--burgundy);
+    }
+
+    /* Footer */
+    footer {
+      background: var(--black);
+      padding: 70px 0 35px;
+      border-top: 1px solid rgba(198,161,91,0.2);
+    }
+    .footer-content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 50px;
+      margin-bottom: 50px;
+    }
+    .footer-brand p {
+      color: #aaa092;
+      max-width: 260px;
+      margin-top: 12px;
+    }
+    .footer-links h4, .footer-social h4 {
+      color: var(--gold);
+      margin-bottom: 20px;
+    }
+    .footer-links ul {
+      list-style: none;
+    }
+    .footer-links li {
+      margin-bottom: 10px;
+    }
+    .footer-links a {
+      color: #cfc5b8;
+      text-decoration: none;
+    }
+    .footer-links a:hover {
+      color: var(--gold);
+    }
+    .social-icons a {
+      color: var(--off-white);
+      font-size: 1.4rem;
+      margin-right: 20px;
+      transition: 0.2s;
+    }
+    .social-icons a:hover {
+      color: var(--gold);
+    }
+    .copyright {
+      text-align: center;
+      font-size: 0.75rem;
+      color: #7a6e60;
+      padding-top: 30px;
+      border-top: 1px solid #2a241f;
+    }
+
+    @media (max-width: 900px) {
+      .container { padding: 0 30px; }
+      .hero-title { font-size: 3.2rem; }
+      .navbar { flex-direction: column; gap: 20px; }
+      .about-inner { flex-direction: column; }
+      .about-img { width: 100%; }
+    }
+    @media (max-width: 600px) {
+      .nav-links { gap: 24px; flex-wrap: wrap; justify-content: center; }
+      .section-title { font-size: 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container navbar">
+    <div class="logo">
+      <i class="fas fa-crown logo-icon"></i>
+      <div class="logo-text">NOIR & <span>CRIMSON</span></div>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#home" class="active">Home</a></li>
+      <li><a href="#collection">Collection</a></li>
+      <li><a href="#about">Atelier</a></li>
+      <li><a href="#testimonials">Heritage</a></li>
+      <li><a href="#contact">Concierge</a></li>
+    </ul>
+  </div>
+</header>
+
+<main>
+  <!-- Hero -->
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <div class="hero-sub">L'Art du Sac</div>
+      <h1 class="hero-title">Sculpted in <span>Burgundy</span><br>& Black</h1>
+      <p class="hero-desc">Each bag is a masterpiece of Italian leather, finished with 24k gold hardware — an heirloom for the discerning.</p>
+      <button class="btn-gold" onclick="alert('Experience the private viewing — welcome to Noir & Crimson Atelier.')">DISCOVER THE ATELIER</button>
+    </div>
+  </section>
+
+  <!-- Signature Collection -->
+  <section id="collection">
+    <div class="container">
+      <h2 class="section-title">The Signature Collection</h2>
+      <div class="section-subhead">Burgundy • Black • White • Gold</div>
+      <div class="bag-grid">
+        <div class="bag-card">
+          <div class="bag-img" style="background-image: url('https://images.pexels.com/photos/1152077/pexels-photo-1152077.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');">
+            <div class="bag-tag">Limited Edition</div>
+          </div>
+          <div class="bag-info">
+            <h3>Duchesse de Bourgogne</h3>
+            <div class="bag-price">$2,850</div>
+            <p class="bag-desc">Handcrafted calf leather, burgundy ombré with gold chain strap.</p>
+            <a href="#" class="btn-gold" style="padding: 8px 26px; font-size:0.7rem;" onclick="alert('Inquire for private purchase')">INQUIRE →</a>
+          </div>
+        </div>
+        <div class="bag-card">
+          <div class="bag-img" style="background-image: url('https://i.pinimg.com/736x/36/c8/1f/36c81f2b4be4cc82748cabb708ad227b.jpg');">
+            <div class="bag-tag">Icon</div>
+          </div>
+          <div class="bag-info">
+            <h3>Noir Absolu</h3>
+            <div class="bag-price">$3,200</div>
+            <p class="bag-desc">Matte black crocodile-embossed leather, interior burgundy suede.</p>
+            <a href="#" class="btn-gold" style="padding: 8px 26px; font-size:0.7rem;" onclick="alert('Inquire for private purchase')">INQUIRE →</a>
+          </div>
+        </div>
+        <div class="bag-card">
+          <div class="bag-img" style="background-image: url('https://i.pinimg.com/736x/d8/34/25/d8342503cf4b300e57bd16cd8e45f2dd.jpg');">
+            <div class="bag-tag">New</div>
+          </div>
+          <div class="bag-info">
+            <h3>Blanc Miroir</h3>
+            <div class="bag-price">$2,490</div>
+            <p class="bag-desc">Cream white pearlized leather, detachable gold coin charm.</p>
+            <a href="#" class="btn-gold" style="padding: 8px 26px; font-size:0.7rem;" onclick="alert('Inquire for private purchase')">INQUIRE →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Maison -->
+  <section id="about" class="about-lux">
+    <div class="container about-inner">
+      <div class="about-text">
+        <h3>Maison Noir & Crimson</h3>
+        <p>Founded in Paris and crafted in Florence, Noir & Crimson bridges architectural minimalism with baroque decadence. Each bag undergoes 48 hours of hand-finishing in our Florentine workshop, using only the finest leathers and gold-smithing techniques.</p>
+        <p>The signature palette of burgundy, black, white and gold reflects our devotion to timeless elegance. Every piece is serialized and comes with a lifetime warranty of craftsmanship.</p>
+        <button class="btn-gold" onclick="alert('Request an atelier tour.')">EXPLORE THE MAISON</button>
+      </div>
+      <div class="about-img"></div>
+    </div>
+  </section>
+
+  <!-- Craftsmanship highlights -->
+  <section style="padding: 60px 0;">
+    <div class="container">
+      <h2 class="section-title">Artisan Excellence</h2>
+      <div class="section-subhead">The legacy of handcrafted luxury</div>
+      <div class="craft-grid">
+        <div class="craft-item"><i class="fas fa-gem"></i><h3>24k Gold Hardware</h3><p>Solid brass, gold-plated by master jewelers</p></div>
+        <div class="craft-item"><i class="fas fa-leaf"></i><h3>Vegetable-tanned Leather</h3><p>Italian tannery, patina that ages beautifully</p></div>
+        <div class="craft-item"><i class="fas fa-hand-sparkles"></i><h3>Hand Stitching</h3><p>Each bag saddle-stitched for durability</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section id="testimonials">
+    <div class="container">
+      <h2 class="section-title">Whispers of Collectors</h2>
+      <div class="section-subhead">Testimonies from global connoisseurs</div>
+      <div class="testimonial-grid">
+        <div class="testi-card"><i class="fas fa-quote-left"></i><p>"The Noir Absolu bag is architectural poetry. The burgundy interior lining feels like a secret luxury."</p><h4>— S. KAMAL, DUBAI</h4></div>
+        <div class="testi-card"><i class="fas fa-quote-left"></i><p>"Exceptional quality and timeless design. Every detail whispers high art."</p><h4>— C. MOREAU, PARIS</h4></div>
+        <div class="testi-card"><i class="fas fa-quote-left"></i><p>"Finally, a brand that honors true craftsmanship. The gold hardware is breathtaking."</p><h4>— L. CHENG, SHANGHAI</h4></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact & Private Concierge -->
+  <section id="contact" class="cta-section">
+    <h2>Private Concierge</h2>
+    <p style="max-width: 550px; margin: 0 auto 25px;">Request a personal viewing, bespoke customization, or an invitation to our trunk shows.</p>
+    <button class="btn-outline-light" onclick="alert('Contact our luxury advisor: concierge@noircrimson.com | +33 1 88 77 65 40')">SCHEDULE A PRIVATE APPOINTMENT</button>
+    <div style="margin-top: 45px; display: flex; justify-content: center; gap: 28px;">
+      <i class="fab fa-instagram" style="font-size: 28px; cursor: pointer; color: var(--gold-light);" onclick="alert('Follow @noircrimson')"></i>
+      <i class="fab fa-pinterest" style="font-size: 28px; cursor: pointer; color: var(--gold-light);" onclick="alert('Pinterest: Noir & Crimson')"></i>
+      <i class="fab fa-youtube" style="font-size: 28px; cursor: pointer; color: var(--gold-light);" onclick="alert('YouTube: Atelier stories')"></i>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <i class="fas fa-crown" style="font-size: 2rem; color: var(--gold);"></i>
+        <div class="logo-text" style="font-size: 1.6rem; margin-top: 8px;">NOIR & <span>CRIMSON</span></div>
+        <p>Artisan leather goods — héritage & modernité</p>
+      </div>
+      <div class="footer-links">
+        <h4>Discover</h4>
+        <ul>
+          <li><a href="#">The Collection</a></li>
+          <li><a href="#">Bespoke Service</a></li>
+          <li><a href="#">Care & Repair</a></li>
+          <li><a href="#">Press & Editorial</a></li>
+        </ul>
+      </div>
+      <div class="footer-social">
+        <h4>Connect</h4>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-weixin"></i></a>
+        </div>
+        <p style="margin-top: 20px;">hello@noircrimson.com<br>+33 1 70 96 22 85</p>
+      </div>
+    </div>
+    <div class="copyright">
+      © 2025 NOIR & CRIMSON — LUXURY GOODS MAISON. ALL RIGHTS RESERVED.
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Smooth scroll + active state
+  const navLinks = document.querySelectorAll('.nav-links a');
+  const sections = document.querySelectorAll('section');
+
+  function setActive() {
+    let scrollPos = window.scrollY + 200;
+    sections.forEach(sec => {
+      const top = sec.offsetTop;
+      const bottom = top + sec.offsetHeight;
+      const id = sec.getAttribute('id');
+      if (scrollPos >= top && scrollPos < bottom) {
+        navLinks.forEach(link => {
+          link.classList.remove('active');
+          if (link.getAttribute('href') === `#${id}`) {
+            link.classList.add('active');
+          }
+        });
+      }
+    });
+  }
+
+  window.addEventListener('scroll', setActive);
+  window.addEventListener('load', setActive);
+
+  navLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      const targetId = this.getAttribute('href').substring(1);
+      const targetEl = document.getElementById(targetId);
+      if (targetEl) {
+        targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        navLinks.forEach(l => l.classList.remove('active'));
+        this.classList.add('active');
+      }
+    });
+  });
+</script>
+</body>
+</html>
+```
